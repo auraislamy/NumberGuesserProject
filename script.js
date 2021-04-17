@@ -7,13 +7,9 @@ const generateTarget = () => {
     return Math.floor(Math.random() * 10);
   }
   
-  const alert = () =>{
-    return `You're number is out of range.`;
-  };
-  
   const compareGuesses = (user, comp, target) => { 
     if (user < 0 || user > 9){
-      return alert();
+      return alert('Your number is out of range');
     }
   
     const absUser = Math.abs(target - user);
