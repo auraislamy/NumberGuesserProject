@@ -6,14 +6,18 @@ let currentRoundNumber = 1;
 const generateTarget = () => {
     return Math.floor(Math.random() * 10);
   }
+
+const getAbsoluteDistance = (num1, num2) => {
+    return Math.abs(num1 - num2);
+  }
   
   const compareGuesses = (user, comp, target) => { 
     if (user < 0 || user > 9){
       return alert('Your number is out of range');
     }
   
-    const absUser = Math.abs(target - user);
-    const absComp = Math.abs(target - comp);
+    const absUser = getAbsoluteDistance(user - target);
+    const absComp = getAbsoluteDistance(comp - target);
     if (absComp >= absUser){
       return true;
     } else {
